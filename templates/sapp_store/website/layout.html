@@ -1,0 +1,216 @@
+{% load sapp_filters %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Furniture Store{% endblock title %}</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto|Pacifico' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/sapp_store/css/style.css">
+</head>
+
+<body>
+    <header class="nav-container">
+        <nav class="container d-lg-none pt-3 pb-2">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-inline-block">
+                            <h1>ПО “ПУСК”</h1>
+                            <h6>оптовая и розничная продажа</h6>
+                        </div>
+                        <div class="d-inline-block">
+                            <button class="btn"><i class="fas fa-search"></i></button>
+                            <button class="btn"><i class="fas fa-shopping-cart"></i></button>
+                            <button class="btn"><i class="fas fa-bars"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="container d-none d-lg-block">
+            <div class="row nav-top">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between pt-3">
+                        <ul class="d-inline-flex list-unstyled">
+                            <li class="nav-item">
+                                <a href="">Оплата и досдавка</a>
+                            </li>
+                            <li class="nav-item ml-lg-5">
+                                <a href="">Контакты</a>
+                            </li>
+                        </ul>
+                        <ul class="d-inline-flex list-unstyled">
+                            <li class="nav-item ml-lg-3">
+                                <a href=""><i class="fab fa-telegram-plane"></i></a>
+                            </li>
+                            <li class="nav-item ml-lg-3">
+                                <a href=""><i class="fab fa-whatsapp"></i></a>
+                            </li>
+                            <li class="nav-item ml-lg-3">
+                                <a href=""><i class="fab fa-whatsapp"></i></a>
+                            </li>
+                            <li class="nav-item ml-lg-3">
+                                <a href="malito:zakaz@zamok-box.ru"><i
+                                        class="fas fa-envelope"></i>&nbsp;zakaz@zamok-box.ru</a>
+                            </li>
+                            <li class="nav-item ml-lg-3">
+                                <a href="tel:+8 (800) 2008640"><i class="fab fa-whatsapp"></i>&nbsp;8 (800) 2008640</a>
+                            </li>
+                            <li class="nav-item ml-lg-3">
+                                <a href="tel:+8 (800) 2008640"><i class="fab fa-whatsapp"></i>&nbsp;8 (800) 2008640</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row nav-bottom">
+                <div class="col-12 pt-2">
+                    <div class="">
+                        <ul class="d-flex list-unstyled">
+                            <li class="nav-item">
+                                <a href="/">
+                                    <div>
+                                        <h1>ПО “ПУСК”</h1>
+                                        <h6>оптовая и розничная продажа</h6>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="nav-item ml-lg-2">
+                                <a type="button" href="/store/" class="btn btn-secondary h-100"><i
+                                        class="fas fa-list"></i>&nbsp;Каталог</a>
+                            </li>
+                            <li class="nav-item  ml-lg-2 flex-grow-1">
+                                <form action="/store/" class="w-100 h-100" autocomplete="off">
+                                    <input type="search" placeholder="Поиск" name="search" 
+                                        class="form-control w-100 h-100" value="{{request.GET.search}}">
+                                </form>
+                            </li>
+                            <li class="nav-item ml-lg-3">
+                                <a type="button" href="/cart/" class="h-100 btn"><i
+                                        class="fas fa-shopping-cart"></i>&nbsp;Корзина</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {% comment %}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Spro</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#spro-nav"
+                    aria-controls="spro-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="spro-nav">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link" href="/store/">Store</a>
+                        {% if request.user.is_authenticated %}
+                        <a class="nav-link" href="{% settings_value 'LOGOUT_URL' %}">Logout</a>
+                        {% else %}
+                        <a class="nav-link" href="{% settings_value 'LOGIN_URL' %}">Login</a>
+                        <a class="nav-link" href="{% settings_value 'REGISTER_URL' %}">Register</a>
+                        {% endif %}
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{{request.user}}</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {% endcomment %}
+
+    </header>
+
+    {% block main %}
+    <main class="body-container">
+
+        {% block container %}
+
+        <div class="container py-3">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        {% endblock container %}
+
+    </main>
+    {% endblock main %}
+
+    <footer class="footer-container">
+        <div class="container">
+            <div class="row pt-5">
+                <div class="col-lg-6 col-md-4 col-12 mb-5">
+                    <h2 class="mb-0">ПО “ПУСК”</h2>
+                    <p class="mt-0 pt-0">оптовая и розничная продажа</p>
+                    <p>
+                        Обращаем ваше внимание, что данный интернет-сайт носит информационный характер и ни при каких
+                        условиях не является публичной офертой, согласно положениям ст. 437 (2) ГК РФ. Для получения
+                        подробной информации о наличии и стоимости товаров, пожалуйста, обращайтесь по телефону +7 (812)
+                        983-70-83. Соглашение на обработку персональных данных
+                    </p>
+                    <p>
+                        ©2021 ООО "Промышленная Фурнитура и Тара" – завод по производству промышленной фурнитуры
+                    </p>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12 mb-5">
+                    <h2>Каталог</h2>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="/store/?ccategory=Лепестки">Лепестки</a>
+                        </li>
+                        <li>
+                            <a href="/store/?ccategory=Наконечники">Наконечники кабельные</a>
+                        </li>
+                        <li>
+                            <a href="/store/?ccategory=Скобы">Скобы</a>
+                        </li>
+                        <li>
+                            <a href="/store/?ccategory=Клеммы">Клеммы</a>
+                        </li>
+                        <li>
+                            <a href="/store/?ccategory=Бирки">Бирки</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="/store/?ccategory=Оплата и доставка">Оплата и доставка</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12 mb-5">
+                    <h2>Контакты</h2>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>
+                                г. Санкт-Петербург,
+                                <br>
+                                Трамвайный проспект, 6
+                                <br>
+                                zakaz@zamok-box.ru
+                                <br>
+                            </p>
+                        </li>
+                        <li><a href="tel:+8 (800) 2008640">+8 (800) 2008640</a></li>
+                        <li><a href="tel:+7 (812) 9837083">+7 (812) 9837083</a></li>
+                        <li><a href="tel:+7 (960) 2837083">+7 (960) 2837083</a></li>
+                        <li>
+                            <a href="" class="btn"><i class="fab fa-telegram"></i></a>
+                            <a href="" class="btn"><i class="fab fa-facebook-f"></i></a>
+                            <a href="" class="btn"><i class="fab fa-vk"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% block scripts %}
+    {% include 'sapp_store/website/components/store-script.html' %}
+    {% endblock scripts %}
+
+</body>
+
+</html>

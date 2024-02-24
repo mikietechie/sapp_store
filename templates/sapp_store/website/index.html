@@ -1,0 +1,139 @@
+{% extends 'sapp_store/website/layout.html' %}
+
+{% block title %}
+{{ block.super }} | Home
+{% endblock title %}
+
+{% block container %}
+<div class="container-fluid">
+    <section class="row hero py-5">
+        <div class="col-md-4 py-5 my-md-5 my-0 offset-lg-2">
+            <h1>Кабельная арматура</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            </p>
+            <a href="/store/" type="button" class="btn brownish-bg text-white">Каталог</a>
+        </div>
+        <div class="col-md-6"
+            style="background-image: url('/static/sapp_store/img/hero-col-bg.PNG'); background-position: center; background-size: contain; background-repeat: no-repeat; min-height: 300px;">
+        </div>
+    </section>
+</div>
+<div class="bg-white">
+    <div class="container">
+        <section class="row">
+            <style>
+                .hex-icon {
+                    width: 35px;
+                    height: calc(35px * 1.1547);
+                    display: inline-block;
+                    font-size: initial;
+                    /* we reset the font-size if we want to add some content */
+                    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+                    background-color: #B87333;
+                    color: #fff;
+                    padding: 8px;
+                    text-align: center;
+                }
+            </style>
+            <div class="col-lg-3 py-5 border-left border-right d-flex d-lg-block">
+                <div class="mr-2">
+                    <div class="hex-icon mb-2"><i class="fas fa-check-circle"></i></div>
+                </div>
+                <div class="">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, debitis!
+                </div>
+            </div>
+            <div class="col-lg-3 py-5 border-left border-right d-lg-block d-none"></div>
+            <div class="col-lg-3 py-5 border-left border-right d-flex d-lg-block">
+                <div class="mr-2">
+                    <div class="hex-icon mb-2"><i class="fas fa-award"></i></div>
+                </div>
+                <div class="">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, debitis!
+                </div>
+            </div>
+            <div class="col-lg-3 py-5 border-left border-right d-lg-block d-none"></div>
+            <div class="col-lg-3 py-5 border-left border-right d-lg-block d-none"></div>
+            <div class="col-lg-3 py-5 border-left border-right d-flex d-lg-block">
+                <div class="mr-2">
+                    <div class="hex-icon mb-2"><i class="fas fa-calculator"></i></div>
+                </div>
+                <div class="">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, debitis!
+                </div>
+            </div>
+            <div class="col-lg-3 py-5 border-left border-right d-lg-block d-none"></div>
+            <div class="col-lg-3 py-5 border-left border-right d-flex d-lg-block">
+                <div class="mr-2">
+                    <div class="hex-icon mb-2"><i class="fas fa-calculator"></i></div>
+                </div>
+                <div class="">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, debitis!
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<div class="container py-5">
+    <section class="row mb-5">
+        <div class="col-12">
+            <h1>О производстве</h1>
+            <p>Собственное производство: ГОСТ, ОСТ, ТУ, чертежи заказчика</p>
+            <p class="mb-5"><b>Предоставляем услуги металлообработки на собственном оборудовании:</b></p>
+            <div class="row mb-5">
+                
+                {% for i in '123' %}
+                    <div class="col-md-4 d-flex mb-4">
+                        <div class="mr-2">
+                            <div class="hex-icon">
+                                <i class="fas fa-address-book"></i>
+                            </div>
+                        </div>
+                        <div class="">
+                            <p>
+                                Изготавливаем нестандартные изделия по чертежам заказчика.
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+                    
+                <!-- <div class="col-md-4"></div>
+                <div class="col-md-4"></div> -->
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <img src="/static/sapp_store/img/image 10.png" style="height: 300px;" class="w-100" alt="">
+                    </div>
+                    <div class="">
+                        <p><b>Лазерная и электроэрозионная резка.</b></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <img src="/static/sapp_store/img/image 9.png" style="height: 300px;" class="w-100" alt="">
+                    </div>
+                    <div class="">
+                        <p><b>Лазерная и электроэрозионная резка.</b></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <img src="/static/sapp_store/img/image 8.png" style="height: 300px;" class="w-100" alt="">
+                    </div>
+                    <div class="">
+                        <p><b>Лазерная и электроэрозионная резка.</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-12"></div>
+    </section>
+
+    {% include 'sapp_store/website/components/request-section.html' %}
+</div>
+{% endblock container %}

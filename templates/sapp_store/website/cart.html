@@ -1,0 +1,71 @@
+{% extends 'sapp_store/website/layout.html' %}
+
+{% load sapp_filters %}
+
+{% block title %}
+{{ block.super }} | Store
+{% endblock title %}
+
+{% block content %}
+<section class="row page-breadcrumb-row">
+    <div class="col-12">
+        <a href="/">Главная</a>&nbsp;/&nbsp;<a href="/cart/" class="active">Корзина</a>
+    </div>
+</section>
+<section class="row mb-5">
+    <div class="col-12 border-radius-10 bg-white p-3">
+        <h1 class="mb-3">Корзина</h1>
+        <div class="table-responsive">
+            <table class="table cart-table border-top-0">
+                <thead>
+                    <tr>
+                        <th class="w-50">Товар</th>
+                        <th>Кол-во</th>
+                        <th>Цена за шт.</th>
+                        <th>Цена</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {% for item in request.customer.active_cart.cart_items %}
+
+                    
+                    {% for i in '14' %}
+
+                    <tr class="cart-item">
+                        <td>
+                            <div>
+                                <img src="{{item.product.image.url}}" alt="" style="width: 70px; height: 55px;">
+                                <a href="/product/{{item.product.name}}/{{item.product.id}}/">{{item.product.name}}</a>
+                            </div>
+                        </td>
+                        <td>{{item.qty}}</td>
+                        <td>{{item.unit_price}}</td>
+                        <td>{{item.line_total}}</td>
+                        <td>
+                            <button class="btn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                        
+                        
+                    {% endfor %}
+                        
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <div class="text-right">
+                                К оплате: {{request.customer.active_cart.total}} руб &nbsp;<a href="" class="btn brownish-bg text-white">Оформить заказ</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock content %}

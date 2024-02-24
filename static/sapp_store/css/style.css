@@ -1,0 +1,173 @@
+body {
+  font-family: Gilroy;
+  color: #2F2F2F;
+}
+body * {
+  word-break: break-word;
+}
+
+h1 {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 88px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+}
+
+a, a.btn {
+  color: #2F2F2F;
+}
+a:active, a:hover, a.active, a.btn:active, a.btn:hover, a.btn.active {
+  color: #B87333;
+  text-decoration: none !important;
+}
+
+header {
+  background-color: #fff;
+  font-size: 18px !important;
+  font-weight: 300;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+header nav h1 {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 22px;
+  margin-bottom: 0px;
+}
+header nav h6 {
+  font-size: 10px;
+  line-height: 12px;
+  margin-bottom: 0px;
+}
+header nav hr {
+  margin: 0px;
+}
+main {
+  background-color: #F6F6F6;
+  min-height: 100vh;
+}
+
+footer {
+  background-color: #353845;
+  color: #fff;
+}
+footer ul {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+}
+footer ul li {
+  margin-bottom: 8px;
+}
+footer ul li a,
+footer ul li a.btn {
+  color: #fff;
+}
+
+.brownish-bg {
+  background-color: #B87333;
+}
+
+.brownish-fg {
+  color: #B87333;
+}
+
+.brownish-bd {
+  border-color: #B87333;
+}
+
+.border-radius-10 {
+  border-radius: 10px;
+}
+
+.card {
+  border-radius: 10px;
+}
+.card .card-title {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.card .card-text {
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  font-weight: 300;
+}
+
+.page-breadcrumb-row {
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.page-breadcrumb-row .col-12 {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.filter-card {
+  background-color: rgba(184, 115, 51, 0.6);
+}
+.filter-card form.filter-form {
+  padding: 16px;
+}
+.filter-card form.filter-form label {
+  display: none;
+}
+.filter-card form.filter-form input,
+.filter-card form.filter-form select {
+  transform: skew(-15deg, 0);
+  border-radius: 10px;
+  min-width: 150px;
+}
+
+.catalogue-card ul {
+  list-style-type: none;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  padding-inline-start: 0px;
+  line-height: 25.2px;
+}
+
+.product-card {
+  background-color: #fff;
+}
+.product-card:hover {
+  transform: scale(105%);
+}
+.product-card img {
+  height: 200px;
+}
+.product-card .product-price {
+  font-weight: 800;
+}
+
+.pagination-nav ul li {
+  margin: auto 8px;
+}
+.pagination-nav ul li a {
+  background-color: #fff;
+  color: #000;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.pagination-nav ul li a.active, .pagination-nav ul li a:hover {
+  background-color: #B87333;
+}
+
+.store-footer img {
+  width: 100%;
+}
+
+/** Cart Page *//*# sourceMappingURL=style.css.map */

@@ -1,0 +1,44 @@
+<script type="module">
+    document.addEventListener("DOMContentLoaded", () => {
+        const $products = document.querySelectorAll(".product-component")
+        const $cart = document.querySelector(".cart")
+
+        const updateCart = async (product, qty) => {
+            const payload = {
+                cart_id: parseInt("{{request.customer.active_cart.id}}"),
+                product_id: Number(product),
+                qty: qty
+            }
+            try {
+                const res = await fetch("/space/api/method/sapp_store/cart/update_cart_items/", {
+                    headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                    },
+                    method: "POST",
+                    body: JSON.stringify({a: 1, b: 2})
+                })
+                if (res.ok) {
+                    const data = await res.json()
+                    return data
+                } else {
+                    return false
+                }
+            } catch (error) {
+
+            }
+        }
+
+        $products?.forEach(($product) => {
+            const productID = $product.dataset.productID
+            $product.querySelector("span.cart-subtract").addEventListener("click", () => {
+                alert("subtract")
+            })
+            $product.querySelector("span.cart-add").addEventListener("click", () => {
+                alert("add")
+                updateCart(productID, 1)
+            })
+        })
+
+    })
+</script>

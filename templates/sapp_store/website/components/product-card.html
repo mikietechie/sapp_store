@@ -1,0 +1,23 @@
+<div class="card product-card product-component border-0" data-productID="{{item.id}}">
+    <img src="{{item.image.url}}" alt="" class="card-img-top">
+    <div class="card-body">
+        <div class="card-text">
+            <p class="product-desc"><a href="/product/{{item.name}}/{{item.id}}/">{{item.name}}</a></p>
+            <p class="product-price">{{item.price}} руб/шт</p>
+        </div>
+        <div class="card-actions">
+            <div class="row">
+                <div class="col-6">
+                    <div class="btn w-100 cart-btn border border-secondary d-inline-flex justify-content-between">
+                        <span class="cart-subtract"><i class="fas fa-minus"></i></span>
+                        <span class="product-qty">{{item.stock_qty}}</span>
+                        <span class="cart-add"><i class="fas fa-plus"></i></span>
+                    </div>
+                </div>
+                <div class="col-6 px-0">
+                    <button class="btn brownish-bg w-100 buy-btn brownish-bd border">Купить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
